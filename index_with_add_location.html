@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan your trip - Berlin25</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      margin: 0;
+      padding: 0;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      padding: 20px;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .title-section {
+      text-align: center;
+    }
+
+    .trip-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      transition: transform 0.5s ease;
+    }
+
+    .trip-image:hover {
+      transform: scale(1.03);
+    }
+
+    .section {
+      margin: 20px 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .section h3 {
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .add-link {
+      float: right;
+      color: #007BFF;
+      text-decoration: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .add-link:hover {
+      color: #0056b3;
+    }
+
+    .box {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 10px 0;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .box:hover {
+      transform: scale(1.02);
+      background-color: #f9f9f9;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 20px;
+    }
+
+    .fade-in {
+      animation: fadeInNew 0.5s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInNew {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span>&larr;</span>
+      Plan your trip
+      <span style="color: gold;">&#9733;</span>
+    </header>
+
+    <div class="title-section">
+      <h2>Berlin25</h2>
+      <img src="berlin-wall.jpg" alt="Berlin Wall" class="trip-image">
+      <p><strong>Vision board</strong><br>2025 May 19 – 26</p>
+    </div>
+
+    <div class="section">
+      <h3>Locations: <span class="add-link" onclick="addLocation()">Add Locations →</span></h3>
+      <ul id="locations-list">
+        <li>Brandenburg Gate</li>
+        <li>East Side Gallery</li>
+        <li>Kreuzberg</li>
+      </ul>
+    </div>
+
+    <div class="box">Budget planner →</div>
+
+    <div class="section">
+      <h3>Activities & Tickets: <a href="#" class="add-link">Add Activities →</a></h3>
+      <ul>
+        <li>Berlin TV Tower</li>
+        <li>Museum Island Pass</li>
+        <li>1-Hour City Tour by Boat</li>
+      </ul>
+    </div>
+
+    <div class="box">Smart Suggestions & Assistance →</div>
+
+    <div class="footer">
+      Invite Friends – Share and plan together in real time. <br>
+      <span style="font-size: 1.5rem;">⬆️</span>
+    </div>
+  </div>
+
+  <script>
+    function addLocation() {
+      const list = document.getElementById('locations-list');
+      const newItem = document.createElement('li');
+      newItem.textContent = "New Location";
+      newItem.classList.add('fade-in');
+      list.appendChild(newItem);
+    }
+  </script>
+</body>
+</html>
